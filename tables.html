@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hot Restaurant</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center"><span class="glyphicon glyphicon-fire"></span>Hot Restaurant</h1>
+            <h2 class="text-center">Current Reservations and Waiting List</h2>
+            <hr>
+            <div class="text-center">
+                <a href="/reserve"><button class="btn btn-danger btn-lg"><span
+                            class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
+                <a href="/"><button class="btn btn-default btn-lg"><span
+                            class="glyphicon glyphicon-home"></span></button></a>
+
+            </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class ="col-lg-12">
+                <div class ="panel panel-default">
+                    <div class ="panel-heading">
+                        <h4 class ="panel-title">Current Reservations</h4>
+                    </div>
+                    <div class ="panel-body" id ="currReservations">
+                        <div class ="well" id ="label1">
+                            <h2><span class ="label label-primary">1</span>2134535</h2>  
+                        </div>
+                        <div class ="well" id ="label2">
+                            <h2><span class ="label label-primary">2</span>23r23r2</h2>  
+                        </div>
+                        <div class ="well" id ="label3">
+                            <h2><span class ="label label-primary">3</span>7474915</h2>  
+                        </div>
+                        <div class ="well" id ="label4">
+                            <h2><span class ="label label-primary">4</span>3485929</h2>  
+                        </div>
+                    </div>
+                </div>
+                <div class ="panel panel-default">
+                    <div class ="panel-heading">
+                        <h4 class ="panel-title">Waiting List</h4>
+                    </div>
+                    <div class ="panel-body" id ="waitList"></div>
+                </div>
+            </div>
+        </div>
+        <footer class ="footer">
+            <div class="container">
+                <p>Control Panel</p>
+              <p>
+                <a href = "#">Clear Tables</a> |
+                <a href = "/api/tables">API Table Link</a> |
+                <a href = "/api/waitlist">API Waitlist</a>
+                </p>
+                </div>
+            </footer>
+
+
+
+
+</body>
+
+</html>
