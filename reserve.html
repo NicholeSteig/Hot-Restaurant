@@ -83,7 +83,7 @@
       };
 
       // Question: What does this code do??
-      $.post("/tables", newReserve)
+      $.post("./tables", newReserve)
         .then(function(data) {
           console.log("reserve.html", data);
           alert("adding reservation");
