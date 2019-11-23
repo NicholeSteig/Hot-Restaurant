@@ -44,12 +44,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="Email1">Email address</label>
-                                <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp"
+                                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
                                     placeholder="Enter email">
                             </div>
                             <div class="form-group">
                                 <label for="uniqueID">Unique Id</label>
-                                <input type="password" class="form-control" id="ID">
+                                <input type="password" class="form-control" id="iD">
                             </div>
                         
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -71,5 +71,24 @@
     
     </footer>
 </body>
+<script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newReserve = {
+        name: $("#inputName").val().trim(),
+        phone: $("#inputPhoneNumber").val().trim(),
+        email: $("#inputEmail").val().trim(),
+        id: $("#iD").val().trim()
+      };
+
+      // Question: What does this code do??
+      $.post("/tables", newReserve)
+        .then(function(data) {
+          console.log("reserve.html", data);
+          alert("adding reservation");
+        });
+    });
+  </script>
 
 </html>
