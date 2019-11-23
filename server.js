@@ -9,15 +9,15 @@ var PORT = process.env.PORT || 3000;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+// =============================================================
 //Tables data
-const data = [
+const datas = [
     {
         "name": "John",
         "phone": "123-456-7890",
         "email": "john@gmail.com",
         "id": "hellooo"
-    },
+    }
 ]
 
 
@@ -33,8 +33,30 @@ app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-app.post("/tables", function(req, res) {
+// Displays all tables
+app.get("/api/tables", function(req, res) {
+  return res.json(datas);
+});
+
+// Displays a single table, or returns false
+app.get("/api/datas/:data", function(req, res) {
+  var chosen = req.params.data;
+
+  console.log(chosen);
+
+  for (var i = 0; i < datas.length; i++) {
+    if (chosen === datas[i].name) {
+      return res.json(datas[i]);
+    }
+  }
+
+  return res.json(false);
+});
+//create new tables
+app.post("/api/tables", function(req, res) {
 var newReserve = req.body;
+
+newReserve.name = newReserve.name.replace(/\s+/g, "").toLowerCase();
 
 console.log(newReserve);
 
