@@ -73,7 +73,7 @@
 </body>
 <script type="text/javascript">
     // Question: What does this code do?
-    $("#add-btn").on("click", function(event) {
+    $("#submit-button").on("click", function(event) {
       event.preventDefault();
       var newReserve = {
         name: $("#inputName").val().trim(),
@@ -83,6 +83,7 @@
       };
 
       // Question: What does this code do??
+
       $.post("/api/tables", newReserve)
         .then(function(data) {
           console.log("tables.html", data);
